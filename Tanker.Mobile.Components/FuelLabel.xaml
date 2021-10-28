@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Grid
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Tanker.Mobile.Components;assembly=Tanker.Mobile.Components"
+    x:Class="Tanker.Mobile.Components.FuelLabel"    
+    x:Name="PriceLabelRoot">
+    <Grid.Resources>
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="33*" />
+        <ColumnDefinition Width="33*" />
+        <ColumnDefinition Width="33*" />
+    </Grid.ColumnDefinitions>
+    <Label Text="{Binding Source={x:Reference PriceLabelRoot}, Path=Name}" Grid.Column="0" Grid.Row="0" />
+    <components:Trend Change="{Binding Source={x:Reference PriceLabelRoot}, Path=PriceChangedValue}" Grid.Row="0" Grid.Column="1"/>
+    <Grid Grid.Row="0" Grid.Column="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Text="{Binding Source={x:Reference PriceLabelRoot}, Path=Price}" Grid.Column="0" />
+        <Label Text="{Binding Source={x:Reference PriceLabelRoot}, Path=Currency}" Grid.Column="1" />
+    </Grid>
+</Grid>

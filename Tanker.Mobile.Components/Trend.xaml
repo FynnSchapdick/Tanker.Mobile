@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="Tanker.Mobile.Components.Trend">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Path x:Name="arrow"
+          Margin="0,5,0,0"
+          Stroke="SteelBlue"
+          Data="M 0 5 L 5 0 L 10 5"
+          StrokeThickness="2"
+          Grid.Column="0" />
+    <Label Text="{Binding Source={x:Reference TrendRoot}, Path=Change}" Grid.Column="1" />
+</Grid>

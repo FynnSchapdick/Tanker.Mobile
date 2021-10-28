@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Frame 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="Tanker.Mobile.Components.MenuItem"
+    Padding="0"
+    VerticalOptions="Start"
+    HasShadow="True">
+    <Grid Padding="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding Icon}"
+               WidthRequest="35"
+               HeightRequest="35"
+               VerticalOptions="Center" />
+
+        <Label Grid.Column="1" Text="{Binding Title}"
+               FontSize="Medium"
+               VerticalOptions="Center"/>
+    </Grid>
+</Frame>

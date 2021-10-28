@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Grid
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:Tanker.Mobile.Components;assembly=Tanker.Mobile.Components"
+    xmlns:models="clr-namespace:Tanker.Mobile.Core.Domain.Entities;assembly=Tanker.Mobile.Core"
+    x:Class="Tanker.Mobile.Components.HeaderedScrollableFuels"
+    x:Name="HeaderedScrollableFuelsRoot">
+    <Frame BorderColor="Black">
+        <StackLayout>
+            <Label Text="Kraftstoffliste:"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" />
+            <ScrollView IsClippedToBounds="true">
+                <StackLayout BindableLayout.ItemsSource="{Binding Source={x:Reference HeaderedScrollableFuelsRoot}, Path=Fuels}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame
+                                BorderColor="Black">
+                                <StackLayout>
+                                    <Frame>
+                                        <components:FuelLabel Name="Super E10"></components:FuelLabel>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </Frame>
+</Grid>
