@@ -3,17 +3,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:controls="clr-namespace:Tanker.Mobile.Components;assembly=Tanker.Mobile.Components"
              x:Class="Tanker.Mobile.Views.MenuView"
              NavigationPage.HasNavigationBar="False"
              prism:ViewModelLocator.AutowireViewModel="True">
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <!-- Auslagern -->
-                <Image Source="hamburger_48_px.png" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" />
-                <Label Text="No content found" HorizontalOptions="Center" />
-            </StackLayout>
-        </Grid>
+        <controls:LabeledImage Text="No Content found" ImageSource="menu.png"/>
         <Grid x:Name="MainMenuView" ColumnDefinitions="Auto, *" BackgroundColor="#221F33" HeightRequest="500"
               VerticalOptions="Start" AnchorX="0.08" AnchorY="0.08" Rotation="-90">
             <Grid AnchorX="0.08" AnchorY="0.08" Rotation="90">
